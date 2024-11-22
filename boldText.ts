@@ -7,7 +7,8 @@ const BoldText = () => {
     addPreSendListener((_, message) => {
         if (message.content.match("!Boldtext")) {
             bold = !bold;
-            message.content = message.content.replace("!Boldtext", "").trim();
+            message.content = "";
+            return;
         }
         if (bold) {
             message.content = "# " + message.content;
